@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 
-module.exports = {
+let webpackConfig = {
     entry: [
         'script-loader!jquery/dist/jquery.min.js',
         'script-loader!foundation-sites/dist/js/foundation.min.js',
@@ -40,3 +40,16 @@ module.exports = {
         ]
     }
 };
+
+const ENV = process.env.NODE_ENV;
+if (ENV === 'PROD') {
+    webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
+        minimize: true
+    }));
+    console.log(`Environnement d'éxécution : ${process.env.NODE_ENV}`);
+} else {
+    console.log('Environnement d\'éxécution : hors PROD');
+}
+
+module.exports = webpackConfig;
+

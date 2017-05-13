@@ -15,7 +15,7 @@
     "express": "^4.15.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router": "^2.0.0",
+    "react-router-dom": "^4.1.1",
     "url-search-params-polyfill": "^1.2.0"
   },
   "devDependencies": {

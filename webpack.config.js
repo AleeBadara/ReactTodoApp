@@ -20,9 +20,8 @@ let webpackConfig = {
         filename: './public/bundle.js'
     },
     resolve: {
-        modules: [__dirname, 'node_modules'],
+        modules: [__dirname, 'node_modules', './app/components', './app/api', './app/actions', './app/reducers', './app/store'],
         alias: {
-            Main: "app/components/Main.jsx",
             ApplicationStyles: "app/styles/app.scss"
         },
         extensions: ['.js', '.jsx']
